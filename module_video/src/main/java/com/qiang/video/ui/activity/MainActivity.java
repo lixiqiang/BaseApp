@@ -17,6 +17,7 @@ import me.jessyan.autosize.utils.LogUtils;
 
 public class MainActivity extends BaseActivity {
 
+
     private TextView txVideoPlay;
 
     private TextView viewPagerPlay;
