@@ -1,0 +1,1 @@
+package com.qiang.video.ui.module;import java.io.Serializable;/** * @author lixiqiang * @date：2019/12/10 0010 */public class User implements Serializable {}

@@ -1,3 +1,4 @@
+include ':module_video'
 include ':baselib'
 include ':app'
 rootProject.name = "BaseApp"
