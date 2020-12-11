@@ -1,4 +1,8 @@
-include ':module_video'
-include ':baselib'
-include ':app'
+
 rootProject.name = "BaseApp"
+include ':app'
+include ':baselib'
+
+include ':module_home'
+include ':module_video'
+include ':otherlib:magicindicator'
