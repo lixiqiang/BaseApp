@@ -1,0 +1,22 @@
+<resources>
+
+    <style name="BaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme" parent="BaseTheme">
+        <item name="android:windowBackground">@color/color_white</item>
+    </style>
+
+    <style name="splashTheme" parent="BaseTheme">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 设置window过度效果 禁用窗口的预览动画 -->
+        <item name="android:windowDisablePreview">false</item>
+        <!-- 设置window背景 -->
+        <item name="android:windowBackground">@drawable/launcher_bg</item>
+    </style>
+
+</resources>
