@@ -30,7 +30,7 @@
             android:id="@+id/menuText"
             android:layout_width="120dp"
             android:layout_height="match_parent"
-            android:background="@color/colorAccent"
+            android:background="@color/color_black"
             android:gravity="center"
             android:text="置顶"
             android:textColor="#fff" />

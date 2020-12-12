@@ -90,8 +90,8 @@ public class DiscoverFragment extends BaseFragment {
             @Override
             public IPagerTitleView getTitleView(Context context, final int index) {
                 ColorTransitionPagerTitleView titleView = new ColorTransitionPagerTitleView(context);
-                titleView.setNormalColor(ContextCompat.getColor(context, R.color.colorAccent));
-                titleView.setSelectedColor(ContextCompat.getColor(context, R.color.colorPrimary));
+                titleView.setNormalColor(ContextCompat.getColor(context, R.color.color_black));
+                titleView.setSelectedColor(ContextCompat.getColor(context, R.color.color_ff3d00));
                 titleView.setText(titles.get(index));
 
                 titleView.setOnClickListener(new NoDoubleClickListener() {
@@ -111,7 +111,7 @@ public class DiscoverFragment extends BaseFragment {
                 indicator.setLineHeight(ScreenUtils.dip2px(context, 4));
                 indicator.setRoundRadius(ScreenUtils.dip2px(context, 2));
                 indicator.setYOffset(ScreenUtils.dip2px(context, 5));
-                indicator.setColors(ContextCompat.getColor(context, R.color.colorAccent));
+                indicator.setColors(ContextCompat.getColor(context, R.color.color_ff3d00));
                 return indicator;
             }
         });

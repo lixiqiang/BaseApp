@@ -2,6 +2,7 @@ package com.qiang.home.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -89,6 +90,18 @@ public class HomeFragment extends BaseFragment {
         BaseFragmentStateAdapter adapter = new BaseFragmentStateAdapter(getChildFragmentManager(), fragments);
         viewPager.setAdapter(adapter);
         initIndicator();
+        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int off) {
+                // 0 appBar完全显示  topBarHeight 完全滑出
+                int offSet = Math.abs(off);
+                int topBarHeight = appBarLayout.getTotalScrollRange();
+                float alpha = offSet / ((float) topBarHeight);
+                searchLayout.setAlpha(1 - alpha);
+                Log.e("appBarLayout", "offSet = " + offSet + ",topBarHeight = " + topBarHeight);
+
+            }
+        });
 
 
     }
@@ -105,8 +118,8 @@ public class HomeFragment extends BaseFragment {
             @Override
             public IPagerTitleView getTitleView(Context context, final int index) {
                 ColorTransitionPagerTitleView titleView = new ColorTransitionPagerTitleView(context);
-                titleView.setNormalColor(ContextCompat.getColor(context, R.color.colorAccent));
-                titleView.setSelectedColor(ContextCompat.getColor(context, R.color.colorPrimary));
+                titleView.setNormalColor(ContextCompat.getColor(context, R.color.color_black));
+                titleView.setSelectedColor(ContextCompat.getColor(context, R.color.color_ff3d00));
                 titleView.setText(titles.get(index));
 
                 titleView.setOnClickListener(new NoDoubleClickListener() {
@@ -126,7 +139,7 @@ public class HomeFragment extends BaseFragment {
                 indicator.setLineHeight(ScreenUtils.dip2px(context, 4));
                 indicator.setRoundRadius(ScreenUtils.dip2px(context, 2));
                 indicator.setYOffset(ScreenUtils.dip2px(context, 5));
-                indicator.setColors(ContextCompat.getColor(context, R.color.colorAccent));
+                indicator.setColors(ContextCompat.getColor(context, R.color.color_ff3d00));
                 return indicator;
             }
         });
